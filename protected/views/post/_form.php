@@ -15,8 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-<?php echo $form->dropDownList($model,'status',Lookup::items('PostStatus')); ?>
-
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -41,7 +39,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		<?php
+		//echo $form->textField($model,'status'); 
+		echo $form->dropDownList($model,'status',Lookup::items('PostStatus')); ?>
+		<!-- CHECK -->
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
