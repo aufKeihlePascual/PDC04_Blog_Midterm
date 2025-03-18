@@ -204,4 +204,16 @@ class Post extends CActiveRecord
 		$comment->post_id=$this->id;
 		return $comment->save();
 	}
+
+	public static function getStatusName($status)
+	{
+		$statusNames = array(
+			1 => 'Draft',
+			2 => 'Published',
+			3 => 'Archived',
+		);
+
+		return isset($statusNames[$status]) ? $statusNames[$status] : "Unknown";
+}
+
 }

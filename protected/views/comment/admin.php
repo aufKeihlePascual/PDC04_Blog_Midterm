@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Comment', 'url'=>array('index')),
-	array('label'=>'Create Comment', 'url'=>array('create')),
+	array('label'=>'List Comments', 'url'=>array('index')),
+	// array('label'=>'Create Comment', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -41,22 +41,25 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'comment-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'content',
-		'status',
-		'create_time',
-		'author',
-		'email',
-		/*
-		'url',
-		'post_id',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
+    'id' => 'comment-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
+        'id',
+        'content',
+        array(
+            'name' => 'status',
+            'value' => 'Comment::getStatusName($data->status)',
+            'filter' => CHtml::listData(
+                Lookup::model()->findAll('type="CommentStatus"'), 'code', 'name'
+            ),
+        ),
+        'create_time',
+        'author',
+        'email',
+        array(
+            'class' => 'CButtonColumn',
+        ),
+    ),
 )); ?>
+

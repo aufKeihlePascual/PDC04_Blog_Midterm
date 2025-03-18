@@ -52,7 +52,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'title',
 		'content',
 		'tags',
-		'status',
+		array(
+			'name' => 'status',
+			'value' => 'Post::getStatusName($data->status)',
+			'filter' => Lookup::items('PostStatus'),
+		),
 		'create_time',
 		//'update_time',
 		//'author_id',

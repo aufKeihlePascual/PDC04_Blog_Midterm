@@ -33,7 +33,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		<?php echo $form->dropDownList(
+			$model,
+			'status',
+			array_merge(array('' => '-'), Lookup::items('PostStatus')),
+			array('class' => 'form-control')
+		); ?>
 	</div>
 
 	<div class="row">

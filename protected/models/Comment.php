@@ -124,6 +124,7 @@ class Comment extends CActiveRecord
 		{
 			if($this->isNewRecord)
 				$this->create_time=time();
+				$this->status = self::STATUS_PENDING;
 			return true;
 		}
 		else
@@ -172,4 +173,15 @@ class Comment extends CActiveRecord
             'limit'=>$limit,
         ));
     }
+
+	public static function getStatusName($status)
+	{
+		$lookup = Yii::app()->db->createCommand()
+			->select('name')
+			->from('{{lookup}}')
+			->where('code=:code AND type="CommentStatus"', array(':code' => $status))
+			->queryScalar();
+
+		return $lookup ? $lookup : "Unknown"; // Fallback in case the status is missing
+	}
 }

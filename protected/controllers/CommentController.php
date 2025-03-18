@@ -72,8 +72,11 @@ class CommentController extends Controller
 		if(isset($_POST['Comment']))
 		{
 			$model->attributes=$_POST['Comment'];
+			$model->status = Comment::STATUS_PENDING; //to make sure that status default to pending approval
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+			
 		}
 
 		$this->render('create',array(

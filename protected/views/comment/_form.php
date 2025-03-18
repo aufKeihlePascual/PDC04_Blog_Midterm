@@ -26,8 +26,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		<?php //echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->hiddenField($model, 'status', array('value' => Comment::STATUS_PENDING)); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
