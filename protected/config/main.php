@@ -79,4 +79,12 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'pascual.keihlediannegyraser@auf.edu.ph',
 	),
+
+	'params'=>array(
+		// this is used in contact page
+		'adminEmail'=>'david.iverson@auf.edu.ph',
+		'commentNeedApproval'=>true,
+		'tagCloudCount'=>20,
+		'recentCommentCount' => 10,
+	),
 );
