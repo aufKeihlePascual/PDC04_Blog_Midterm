@@ -140,4 +140,20 @@ class Tag extends CActiveRecord
 		$this->updateCounters(array('frequency'=>-1),$criteria);
 		$this->deleteAll('frequency<=0');
 	}
+
+	public function findTagWeights($maxTags = 20)
+	{
+		$criteria = new CDbCriteria();
+		$criteria->limit = $maxTags;
+		$tags = Tag::model()->findAll($criteria);
+		$tagWeights = array();
+
+		foreach ($tags as $tag) {
+			$weight = $tag->frequency + 8; 
+			$weight = $weight >= 12 ? 12 : $weight; 
+			$tagWeights[$tag->name] = $weight; 
+		}
+
+		return $tagWeights;
+	}
 }
