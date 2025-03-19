@@ -63,6 +63,7 @@ $this->menu=array(
         <?php else: ?>
             <?php $this->renderPartial('/comment/_form', array(
                 'model' => $comment,
+                'post' => $model,
             )); ?>
         <?php endif; ?>
     <?php endif; ?>

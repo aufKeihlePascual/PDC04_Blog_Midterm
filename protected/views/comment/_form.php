@@ -27,16 +27,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php //echo $form->hiddenField($model, 'status', array('value' => Comment::STATUS_PENDING));
-		echo $form->dropDownList($model, 'status', Lookup::items('CommentStatus'));
-		?>
+		<?php echo $form->dropDownList($model, 'status', Lookup::items('CommentStatus')); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'create_time'); ?>
-		<?php echo $form->textField($model,'create_time'); ?>
-		<?php echo $form->error($model,'create_time'); ?>
+		<?php //echo $form->labelEx($model,'create_time'); ?>
+		<?php //echo $form->textField($model,'create_time'); ?>
+		<?php //echo $form->error($model,'create_time'); ?>
+		<?php echo $form->hiddenField($model, 'create_time'); ?>
 	</div>
 
 	<div class="row">
@@ -58,9 +57,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'post_id'); ?>
-		<?php echo $form->textField($model,'post_id'); ?>
-		<?php echo $form->error($model,'post_id'); ?>
+		<?php //echo $form->labelEx($model,'post_id'); ?>
+		<?php //echo $form->textField($model,'post_id'); ?>
+		<?php //echo $form->error($model,'post_id'); ?>
+		<?php echo $form->hiddenField($model, 'post_id', array('value' => $post->id)); ?>
 	</div>
 
 	<div class="row buttons">

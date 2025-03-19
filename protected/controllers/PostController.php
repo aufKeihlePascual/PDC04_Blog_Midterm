@@ -67,6 +67,7 @@ class PostController extends Controller
 		$this->render('view',array(
 			'model'=>$post,
 			'comment'=>$comment,
+			'post' => $post,
 		));
 	}
 
