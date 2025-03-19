@@ -60,7 +60,15 @@
 		<?php //echo $form->labelEx($model,'post_id'); ?>
 		<?php //echo $form->textField($model,'post_id'); ?>
 		<?php //echo $form->error($model,'post_id'); ?>
-		<?php echo $form->hiddenField($model, 'post_id', array('value' => $post->id)); ?>
+		<?php
+		if (isset($post)) {
+			echo $form->hiddenField($model, 'post_id', array('value' => $post->id));
+		} elseif (!$model->isNewRecord) {
+			echo $form->hiddenField($model, 'post_id', array('value' => $model->post_id)); // Use existing post_id
+		} else {
+			echo CHtml::hiddenField('post_id', ''); // Fallback to avoid errors
+		}
+		?>
 	</div>
 
 	<div class="row buttons">

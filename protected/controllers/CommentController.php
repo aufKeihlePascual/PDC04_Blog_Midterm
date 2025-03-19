@@ -105,6 +105,7 @@ class CommentController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'post' => isset($model->post) ? $model->post : null,
 		));
 	}
 
