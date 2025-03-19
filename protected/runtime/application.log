@@ -1392,3 +1392,35 @@ Stack trace:
 REQUEST_URI=/yiiblog/index.php/comment/create
 HTTP_REFERER=http://localhost/yiiblog/index.php/comment/create
 ---
+2025/03/19 08:40:07 [warning] [application] Failed to set unsafe attribute "create_time" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\PostController.php (85)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\PostController.php (65)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:40:07 [warning] [application] Failed to set unsafe attribute "post_id" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\PostController.php (85)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\PostController.php (65)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:42:04 [warning] [application] Failed to set unsafe attribute "create_time" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:42:04 [warning] [application] Failed to set unsafe attribute "post_id" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:42:53 [warning] [application] Failed to set unsafe attribute "create_time" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:42:53 [warning] [application] Failed to set unsafe attribute "post_id" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:52:05 [warning] [application] Failed to set unsafe attribute "create_time" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:52:05 [warning] [application] Failed to set unsafe attribute "post_id" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:52:11 [warning] [application] Failed to set unsafe attribute "create_time" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)
+2025/03/19 08:52:11 [warning] [application] Failed to set unsafe attribute "post_id" of "Comment".
+in C:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php (101)
+in C:\xampp\htdocs\PDC04_Blog_Midterm\index.php (13)

@@ -26,8 +26,10 @@
 	</div>
 
 	<div class="row">
-		<?php //echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->hiddenField($model, 'status', array('value' => Comment::STATUS_PENDING)); ?>
+		<?php echo $form->labelEx($model,'status'); ?>
+		<?php //echo $form->hiddenField($model, 'status', array('value' => Comment::STATUS_PENDING));
+		echo $form->dropDownList($model, 'status', Lookup::items('CommentStatus'));
+		?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 

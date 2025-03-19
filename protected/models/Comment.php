@@ -122,14 +122,16 @@ class Comment extends CActiveRecord
 	{
 		if(parent::beforeSave())
 		{
-			if($this->isNewRecord)
-				$this->create_time=time();
+			if($this->isNewRecord) {
+				$this->create_time = time();
 				$this->status = self::STATUS_PENDING;
+			}
 			return true;
 		}
 		else
 			return false;
 	}
+
 
 	public function getUrl($post = null)
     {
@@ -162,7 +164,8 @@ class Comment extends CActiveRecord
     public function approve()
     {
         $this->status = Comment::STATUS_APPROVED;
-        $this->update(['status']);
+        // $this->update(['status']);
+		$this->save();
     }
 
     public function findRecentComments($limit=10)
