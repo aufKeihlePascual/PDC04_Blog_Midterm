@@ -38,7 +38,11 @@ $this->menu=array(
             'name' => 'update_time',
             'value' => date('F j, Y h:i:s A', $model->update_time),
         ),
-		'author_id',
+		array(
+            'name' => 'author_id',
+            'label' => 'Author',
+            'value' => isset($model->author) ? $model->author->username : "Unknown",
+        ),
 	),
 )); ?>
 
