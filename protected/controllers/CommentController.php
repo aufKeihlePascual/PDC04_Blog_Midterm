@@ -126,6 +126,8 @@ class CommentController extends Controller
 	/**
 	 * Lists all models.
 	 */
+
+	 /*
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Comment', array(
@@ -139,6 +141,29 @@ class CommentController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	*/
+
+	public function actionIndex()
+	{
+		$criteria = new CDbCriteria;
+		$criteria->with = array('post');
+		$criteria->order = 't.status, t.create_time DESC';
+		
+		// If the URL includes status=pending, filter for pending comments (status = 1)
+		if (isset($_GET['status']) && $_GET['status'] === 'pending') {
+			$criteria->addCondition('t.status = 1');
+		}
+		
+		$dataProvider = new CActiveDataProvider('Comment', array(
+			'criteria' => $criteria,
+		));
+
+		$this->render('index', array(
+			'dataProvider' => $dataProvider,
+		));
+	}
+
+
 
 	/**
 	 * Manages all models.

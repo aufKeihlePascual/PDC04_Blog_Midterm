@@ -8,13 +8,22 @@
     </a>
   </li>
 
-  <li>
+  <!-- <li>
     <a href="<?php echo Yii::app()->createUrl('comment/index'); ?>" 
        class="flex items-center space-x-2 text-[#b08968] hover:text-[#8c6a52] transition duration-300">
       <i class="fas fa-check-circle"></i>
       <span>Approve Comments (<?php echo Comment::model()->pendingCommentCount; ?>)</span>
     </a>
-  </li>
+  </li> -->
+
+<li>
+  <a href="<?php echo Yii::app()->createUrl('comment/index', array('status' => 'pending')); ?>" 
+     class="flex items-center space-x-2 text-[#b08968] hover:text-[#8c6a52] transition duration-300">
+    <i class="fas fa-check-circle"></i>
+    <span>Approve Comments (<?php echo Comment::model()->pendingCommentCount; ?>)</span>
+  </a>
+</li>
+
 
   <li>
     <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>" 
