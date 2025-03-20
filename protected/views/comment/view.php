@@ -27,7 +27,10 @@ $this->menu=array(
 			'name' => 'status',
 			'value' => Comment::getStatusName($model->status),
 		),
-		'create_time',
+		array(
+            'name' => 'create_time',
+            'value' => date('F j, Y h:i:s A', $model->create_time),
+        ),
 		'author',
 		'email',
 		'url',
