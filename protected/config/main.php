@@ -10,6 +10,7 @@ return array(
 	'name'=>'PDC04 Blog',
 	
 	'theme'=> 'classic',
+	'defaultController' => 'post',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
