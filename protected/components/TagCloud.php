@@ -3,7 +3,7 @@ Yii::import('zii.widgets.CPortlet');
  
 class TagCloud extends CPortlet
 {
-    public $title='Tags';
+    // public $title='Tags';
     public $maxTags=20;
  
     protected function renderContent()

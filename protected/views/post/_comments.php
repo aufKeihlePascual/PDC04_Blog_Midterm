@@ -5,7 +5,7 @@
     <span class="text-gray-500 text-sm"><?= date('F j, Y \a\t h:i a', $comment->create_time); ?></span>
 </div>
 
-<div class="text-gray-800">
+<div class="text-gray-300">
     <?= nl2br(CHtml::encode($comment->content)); ?>
 </div>
 

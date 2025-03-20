@@ -3,43 +3,30 @@
 /* @var $data Comment */
 ?>
 
-<div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
-	<?php echo CHtml::encode($data->content); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
-	<?php // echo CHtml::encode(Comment::getStatusName($data->status));
-	echo CHtml::encode(Lookup::item("CommentStatus", $data->status));
-	?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode(date('F j, Y h:i:s A', $data->create_time)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('author')); ?>:</b>
-	<?php echo CHtml::encode($data->author); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
-	<?php echo CHtml::encode($data->email); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('url')); ?>:</b>
-	<?php echo CHtml::encode($data->url); ?>
-	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('post_id')); ?>:</b>
-	<?php echo CHtml::encode($data->post_id); ?>
-	<br />
-
-	*/ ?>
-
+<div class="blog-post bg-[#242d4b] p-6 rounded shadow">
+  <!-- Comment Header -->
+  <h2 class="text-2xl font-bold mb-2">
+    <?php echo CHtml::link('Comment #'.CHtml::encode($data->id), array('view', 'id'=>$data->id), array('class' => 'text-[#F5B767FF] hover:text-[#f1c080]')); ?>
+  </h2>
+  
+  <!-- Comment Meta: Date and Author -->
+  <div class="post-meta text-sm text-gray-300 mb-2">
+    <span class="post-date"><?php echo date('F j, Y', $data->create_time); ?></span>
+    <span class="post-author"> | By: <?php echo CHtml::encode($data->author); ?></span>
+  </div>
+  
+  <!-- Comment Excerpt -->
+  <div class="post-excerpt text-base mb-4">
+    <?php 
+      // Strip HTML and limit to 250 characters for a clean summary.
+      $plainText = strip_tags($data->content);
+      $summary = strlen($plainText) > 250 ? substr($plainText, 0, 250) . '...' : $plainText;
+      echo CHtml::encode($summary);
+    ?>
+  </div>
+  
+  <!-- Read More Link -->
+  <div class="read-more">
+    <?php echo CHtml::link('View Comment', array('view', 'id'=>$data->id), array('class'=>'text-[#f5539d] hover:text-[#ff8bcf] font-semibold')); ?>
+  </div>
 </div>

@@ -4,66 +4,87 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="post-form-container" style="margin: 30px auto; max-width: 800px;">
-  <h2 style="color: #ffffff; text-align: center; margin-bottom: 20px;">
+<div class="max-w-3xl mx-auto my-8 p-4">
+  <h2 class="text-center text-white text-2xl font-bold mb-6">
     <?php echo $model->isNewRecord ? 'Create New Post' : 'Update Post'; ?>
   </h2>
-  
-  <div class="panel panel-default" style="background-color: #242d4b; border: none; border-radius: 5px;">
-    <div class="panel-heading" style="background-color: #1a2036; border-bottom: none;">
-      <h3 class="panel-title" style="color: #fff;">Post Details</h3>
+
+  <div class="bg-[#242d4b] rounded-lg shadow">
+    <!-- Form Header -->
+    <div class="bg-[#1a2036] rounded-t-lg px-4 py-3">
+      <h3 class="text-white text-xl">Post Details</h3>
     </div>
-    <div class="panel-body">
+    
+    <!-- Form Body -->
+    <div class="p-6 space-y-6">
       <?php $form = $this->beginWidget('CActiveForm', array(
           'id' => 'post-form',
           'enableAjaxValidation' => false,
-          'htmlOptions' => array('class' => 'form-horizontal')
+          'htmlOptions' => array('class' => 'space-y-6')
       )); ?>
       
-      <p class="note" style="color: #e4e4e4;">Fields with <span class="required">*</span> are required.</p>
+      <p class="text-sm text-[#e4e4e4]">
+        Fields with <span class="text-red-500">*</span> are required.
+      </p>
       
-      <?php echo $form->errorSummary($model); ?>
+      <?php echo $form->errorSummary($model, '', '', array('class' => 'text-red-500')); ?>
       
-      <div class="form-group">
-        <?php echo $form->labelEx($model, 'title', array('class' => 'control-label col-sm-2')); ?>
-        <div class="col-sm-10">
-          <?php echo $form->textField($model, 'title', array('class' => 'form-control', 'maxlength' => 128)); ?>
-          <?php echo $form->error($model, 'title'); ?>
+      <!-- Title Field -->
+      <div class="flex flex-col md:flex-row md:items-center">
+        <?php echo $form->labelEx($model, 'title', array('class' => 'md:w-1/4 text-white font-semibold')); ?>
+        <div class="md:w-3/4">
+          <?php echo $form->textField($model, 'title', array(
+              'class' => 'w-full p-2 rounded border border-gray-300 bg-gray-800 text-white',
+              'maxlength' => 128
+          )); ?>
+          <?php echo $form->error($model, 'title', array('class' => 'text-red-500 text-sm')); ?>
         </div>
       </div>
       
-      <div class="form-group">
-        <?php echo $form->labelEx($model, 'content', array('class' => 'control-label col-sm-2')); ?>
-        <div class="col-sm-10">
-          <?php echo $form->textArea($model, 'content', array('class' => 'form-control', 'rows' => 6)); ?>
-          <?php echo $form->error($model, 'content'); ?>
+      <!-- Content Field -->
+      <div class="flex flex-col md:flex-row md:items-start">
+        <?php echo $form->labelEx($model, 'content', array('class' => 'md:w-1/4 text-white font-semibold pt-2')); ?>
+        <div class="md:w-3/4">
+          <?php echo $form->textArea($model, 'content', array(
+              'class' => 'w-full p-2 rounded border border-gray-300 bg-gray-800 text-white',
+              'rows' => 6
+          )); ?>
+          <?php echo $form->error($model, 'content', array('class' => 'text-red-500 text-sm')); ?>
         </div>
       </div>
       
-      <div class="form-group">
-        <?php echo $form->labelEx($model, 'tags', array('class' => 'control-label col-sm-2')); ?>
-        <div class="col-sm-10">
-          <?php echo $form->textArea($model, 'tags', array('class' => 'form-control', 'rows' => 3)); ?>
-          <?php echo $form->error($model, 'tags'); ?>
+      <!-- Tags Field -->
+      <div class="flex flex-col md:flex-row md:items-start">
+        <?php echo $form->labelEx($model, 'tags', array('class' => 'md:w-1/4 text-white font-semibold pt-2')); ?>
+        <div class="md:w-3/4">
+          <?php echo $form->textArea($model, 'tags', array(
+              'class' => 'w-full p-2 rounded border border-gray-300 bg-gray-800 text-white',
+              'rows' => 3
+          )); ?>
+          <?php echo $form->error($model, 'tags', array('class' => 'text-red-500 text-sm')); ?>
         </div>
       </div>
       
-      <div class="form-group">
-        <?php echo $form->labelEx($model, 'status', array('class' => 'control-label col-sm-2')); ?>
-        <div class="col-sm-10">
-          <?php echo $form->dropDownList($model, 'status', Lookup::items('PostStatus'), array('class' => 'form-control')); ?>
-          <?php echo $form->error($model, 'status'); ?>
+      <!-- Status Field -->
+      <div class="flex flex-col md:flex-row md:items-center">
+        <?php echo $form->labelEx($model, 'status', array('class' => 'md:w-1/4 text-white font-semibold')); ?>
+        <div class="md:w-3/4">
+          <?php echo $form->dropDownList($model, 'status', Lookup::items('PostStatus'), array(
+              'class' => 'w-full p-2 rounded border border-gray-300 bg-gray-800 text-white'
+          )); ?>
+          <?php echo $form->error($model, 'status', array('class' => 'text-red-500 text-sm')); ?>
         </div>
       </div>
       
-      <?php // Hidden fields for create and update time ?>
+      <!-- Hidden Fields for Timestamps -->
       <?php echo $form->hiddenField($model, 'create_time'); ?>
       <?php echo $form->hiddenField($model, 'update_time'); ?>
       
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-primary')); ?>
-        </div>
+      <!-- Submit Button -->
+      <div class="flex justify-end">
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array(
+            'class' => 'px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700'
+        )); ?>
       </div>
       
       <?php $this->endWidget(); ?>

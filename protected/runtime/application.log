@@ -2224,3 +2224,31 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/pdc04_blog_midterm/index.php
 ---
+2025/03/20 20:36:08 [error] [exception.CException] CException: Property "Comment.Welcome!" is not defined. in H:\xampp\htdocs\PDC04_Blog_Midterm\framework\base\CComponent.php:130
+Stack trace:
+#0 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\db\ar\CActiveRecord.php(145): CComponent->__get('Welcome!')
+#1 H:\xampp\htdocs\PDC04_Blog_Midterm\protected\views\comment\view.php(57): CActiveRecord->__get('Welcome!')
+#2 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CBaseController.php(126): require('H:\\xampp\\htdocs...')
+#3 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CBaseController.php(95): CBaseController->renderInternal('H:\\xampp\\htdocs...', Array, true)
+#4 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CController.php(872): CBaseController->renderFile('H:\\xampp\\htdocs...', Array, true)
+#5 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CController.php(785): CController->renderPartial('view', Array, true)
+#6 H:\xampp\htdocs\PDC04_Blog_Midterm\protected\controllers\CommentController.php(56): CController->render('view', Array)
+#7 [internal function]: CommentController->actionView('4')
+#8 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\actions\CAction.php(114): ReflectionMethod->invokeArgs(Object(CommentController), Array)
+#9 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CommentController), Object(ReflectionMethod), Array)
+#10 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#14 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CController.php(291): CFilterChain->run()
+#17 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CWebApplication.php(282): CController->run('view')
+#19 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/view')
+#20 H:\xampp\htdocs\PDC04_Blog_Midterm\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 H:\xampp\htdocs\PDC04_Blog_Midterm\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/pdc04_blog_midterm/index.php/comment/4
+HTTP_REFERER=http://localhost/pdc04_blog_midterm/index.php/comment
+---

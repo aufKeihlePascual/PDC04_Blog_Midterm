@@ -3,41 +3,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title><?php echo CHtml::encode($this->pageTitle); ?></title>
   
-  <!-- Bootstrap CSS (CDN) -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Theme Custom CSS -->
-  <!-- Adjust path if your theme name or structure is different -->
+  <!-- Theme Custom CSS (if needed) -->
   <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css">
 </head>
-<body>
+<body class="bg-[#131a2e] text-[#e4e4e4]">
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <!-- Navbar Header -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php echo Yii::app()->homeUrl; ?>">
-          <?php echo CHtml::encode(Yii::app()->name); ?>
-        </a>
-      </div>
-      
-      <!-- Main Menu -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#1A2036D7] backdrop-blur-sm shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between bg-transparent">
+      <a class="text-[28px] font-bold text-[#f5539d]" href="<?php echo Yii::app()->homeUrl; ?>">
+        <?php echo CHtml::encode(Yii::app()->name); ?>
+      </a>
+      <div>
         <?php
           $this->widget('zii.widgets.CMenu', array(
-            'htmlOptions' => array('class'=>'nav navbar-nav'),
+            'htmlOptions' => array('class'=>'flex space-x-14'),
             'items'=>array(
               array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
               array('label'=>'Contact', 'url'=>array('/site/contact')),
@@ -56,55 +43,39 @@
     </div>
   </nav>
   
-  <!-- Optional Hero Section -->
-  <!-- 
-       If you'd like a large banner using your nighttime city image,
-       create a "hero" div like this. 
-       Make sure 'hero.jpg' is in themes/classic/images/hero.jpg
-  -->
-  
-  <div class="hero">
-    <h1>Welcome to My Neon Blog</h1>
-    <p>Experience the glow of the city at night.</p>
+  <div class="hero relative mt-[4.6rem] h-[26rem] flex items-center justify-center" style="background-image: url('<?php echo Yii::app()->theme->baseUrl; ?>/images/hero.jpg');">
+    <div class="absolute inset-0 bg-[rgba(19,26,46,0.3)]"></div>
+    <div class="relative text-center">
+      <h1 class="text-xl font-bold mb-4">Welcome to My Neon Blog</h1>
+      <p class="text-xl">Experience the glow of the city at night.</p>
+    </div>
   </div>
- 
   
   <!-- Main Content Container -->
-  <div class="container" style="margin-top:80px;">
-    
+  <div class="container mx-auto px-4 mt-5">
     <!-- Breadcrumbs -->
     <?php if(isset($this->breadcrumbs)):?>
-      <div class="row">
-        <div class="col-md-12">
-          <?php
-            $this->widget('zii.widgets.CBreadcrumbs', array(
-              'links'=>$this->breadcrumbs,
-            ));
-          ?>
-        </div>
+      <div class="mb-4">
+        <?php
+          $this->widget('zii.widgets.CBreadcrumbs', array(
+            'links'=>$this->breadcrumbs,
+            'htmlOptions'=>array('class'=>'flex space-x-2 text-sm'),
+          ));
+        ?>
       </div>
     <?php endif;?>
     
-    <!-- Main Row -->
-    <div class="row">
-      <div class="col-md-8">
-        <?php echo $content; ?>
-      </div>
-      
+    <!-- Content Area -->
+    <div class="content-area">
+      <?php echo $content; ?>
     </div>
     
-    <hr>
-    
     <!-- Footer -->
-    <footer>
+    <footer class="mt-8 py-4 border-t border-gray-700 text-center text-sm">
       <p>&copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.</p>
       <p><?php echo Yii::powered(); ?></p>
     </footer>
-    
-  </div> <!-- /container -->
+  </div>
   
-  <!-- jQuery and Bootstrap JS (CDN) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
