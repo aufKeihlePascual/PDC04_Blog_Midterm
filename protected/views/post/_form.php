@@ -42,9 +42,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'create_time'); ?>
-		<?php echo $form->textField($model,'create_time'); ?>
-		<?php echo $form->error($model,'create_time'); ?>
+		<?php //echo $form->labelEx($model,'create_time'); ?>
+		<?php //echo $form->textField($model,'create_time'); ?>
+		<?php //echo $form->error($model,'create_time'); ?>
+		<?php echo $form->hiddenField($model, 'create_time'); ?>
 	</div>
 
 	<div class="row">
