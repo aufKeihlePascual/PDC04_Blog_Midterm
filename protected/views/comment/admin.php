@@ -54,7 +54,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
                 Lookup::model()->findAll('type="CommentStatus"'), 'code', 'name'
             ),
         ),
-        'create_time',
+        array(
+            'name' => 'create_time',
+            'value' => 'date("m/d/Y h:i A", $data->create_time)',
+    		'filter' => false,
+        ),
         'author',
         'email',
         array(

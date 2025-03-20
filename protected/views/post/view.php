@@ -29,8 +29,15 @@ $this->menu=array(
             'name' => 'status',
             'value' => Post::getStatusName($model->status),
         ),
-		'create_time',
-		'update_time',
+		array(
+            'name' => 'create_time',
+            'value' => date('F j, Y h:i:s A', $model->create_time),
+        ),
+		// 'update_time',
+        array(
+            'name' => 'update_time',
+            'value' => date('F j, Y h:i:s A', $model->update_time),
+        ),
 		'author_id',
 	),
 )); ?>
