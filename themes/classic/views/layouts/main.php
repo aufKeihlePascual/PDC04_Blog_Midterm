@@ -12,6 +12,8 @@
   
   <!-- Theme Custom CSS (if needed) -->
   <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body class="bg-[#131a2e] text-[#e4e4e4]">
 
@@ -46,8 +48,8 @@
   <div class="hero relative mt-[4.6rem] h-[26rem] flex items-center justify-center" style="background-image: url('<?php echo Yii::app()->theme->baseUrl; ?>/images/hero.jpg');">
     <div class="absolute inset-0 bg-[rgba(19,26,46,0.3)]"></div>
     <div class="relative text-center">
-      <h1 class="text-xl font-bold mb-4">Welcome to My Neon Blog</h1>
-      <p class="text-xl">Experience the glow of the city at night.</p>
+      <h1 class="text-xl font-bold mb-4">Isekai-d Into The Unknown</h1>
+      <p class="text-xl text-[#FD8373FF]">Experience world through Keihle Pascual's eyes.</p>
     </div>
   </div>
   
@@ -72,7 +74,7 @@
     
     <!-- Footer -->
     <footer class="mt-8 py-4 border-t border-gray-700 text-center text-sm">
-      <p>&copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.</p>
+      <p>&copy; <?php echo date('Y'); ?> by Keihle Dianne Pascual. All Rights Reserved.</p>
       <p><?php echo Yii::powered(); ?></p>
     </footer>
   </div>

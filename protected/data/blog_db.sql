@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2025 at 08:37 AM
+-- Generation Time: Mar 20, 2025 at 10:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,10 @@ CREATE TABLE `tbl_comment` (
 --
 
 INSERT INTO `tbl_comment` (`id`, `content`, `status`, `create_time`, `author`, `email`, `url`, `post_id`) VALUES
-(1, 'This is a test comment.', 2, 1230952187, 'Tester', 'tester@example.com', NULL, 2);
+(1, 'This is a test comment.', 2, 1230952187, 'Tester', 'tester@example.com', '', 2),
+(2, 'adminTest', 1, 1742315770, 'admin', 'admin@test.com', '', 2),
+(4, 'guest user test', 1, 1742473738, 'guest1', 'guest@example.com', '', 1),
+(5, 'demo test', 2, 1742474097, 'demo', 'demo@example.com', '', 29);
 
 -- --------------------------------------------------------
 
@@ -92,8 +95,13 @@ CREATE TABLE `tbl_post` (
 --
 
 INSERT INTO `tbl_post` (`id`, `title`, `content`, `tags`, `status`, `create_time`, `update_time`, `author_id`) VALUES
-(1, 'Welcome!', 'This blog system is developed using Yii. It is meant to demonstrate how to use Yii to build a complete real-world application. Complete source code may be found in the Yii releases.\r\n\r\nFeel free to try this system by writing new posts and posting comments.', 'yii, blog', 2, 1230952187, 1230952187, 1),
-(2, 'A Test Post', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'test', 2, 1230952187, 1230952187, 1);
+(1, 'Welcome!', 'This blog system is developed using Yii. It is meant to demonstrate how to use Yii to build a complete real-world application. Complete source code may be found in the Yii releases.\n\nFeel free to try this system by writing new posts and posting comments.', 'yii, blog', 2, 1230952187, 1230952187, 1),
+(2, 'A Test Post', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'test', 2, 1230952187, 1230952187, 1),
+(29, 'Draft Test 29', 'test 29', 'draft', 2, 1742324436, 1742474033, 2),
+(30, 'Instant', 'Testing if the post gets defaulted into published', 'status', 3, 1742474250, 1742474270, 2),
+(31, 'hidden field create time for post', 'testing if using hidden field for create_time on post form will break system', 'hiddenField', 1, 1742474354, 1742474354, 2),
+(32, 'hide update time field', 'test', 'updateTime', 1, 1742477173, 1742477173, 2),
+(33, 'test no author field', 'testing removing the author field completely from the form', 'authorField', 1, 1742477403, 1742477403, 2);
 
 -- --------------------------------------------------------
 
@@ -114,7 +122,12 @@ CREATE TABLE `tbl_tag` (
 INSERT INTO `tbl_tag` (`id`, `name`, `frequency`) VALUES
 (1, 'yii', 1),
 (2, 'blog', 1),
-(3, 'test', 1);
+(3, 'test', 1),
+(11, 'draft', 1),
+(12, 'status', 1),
+(13, 'hiddenField', 1),
+(14, 'updateTime', 1),
+(15, 'authorField', 1);
 
 -- --------------------------------------------------------
 
@@ -136,7 +149,7 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `username`, `password`, `email`, `profile`) VALUES
 (1, 'demo', '$2a$10$JTJf6/XqC94rrOtzuF397OHa4mbmZrVTBOQCmYD9U.obZRUut4BoC', 'webmaster@example.com', NULL),
-(2, 'admin', '$2y$10$dXo/LOFr/45tVbOKx9Ed4.IF.T.xIRofaSlY0w.oy8PEqX8SZMgnm', 'admin@example.com', NULL);
+(2, 'admin', '$2y$10$lk/QYW0vdkZTDMMh6IuNieiCOe4dvY6ygIeS9oEI1KRD1Qmzlr9DS', 'admin@example.com', NULL);
 
 --
 -- Indexes for dumped tables
@@ -182,7 +195,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_lookup`
@@ -194,13 +207,13 @@ ALTER TABLE `tbl_lookup`
 -- AUTO_INCREMENT for table `tbl_post`
 --
 ALTER TABLE `tbl_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_tag`
 --
 ALTER TABLE `tbl_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

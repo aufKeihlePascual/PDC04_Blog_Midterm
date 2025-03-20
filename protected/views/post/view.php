@@ -54,7 +54,7 @@ $this->menu = array(
   <!-- Comments Section -->
   <section id="comments" class="mb-12">
     <?php if ($model->commentCount >= 1): ?>
-      <h2 class="text-2xl font-semibold text-white mb-4"><?php echo $model->commentCount . ' Comment(s)'; ?></h2>
+      <h3 class="text-2xl font-semibold text-white mb-4"><?php echo $model->commentCount . ' Comment(s)'; ?></h2>
       <div class="space-y-6">
         <?php $this->renderPartial('_comments', array(
             'post' => $model,

@@ -36,7 +36,7 @@
           $this->beginWidget('zii.widgets.CPortlet', array('title' => ''));
           $this->widget('zii.widgets.CMenu', array(
             'items' => $this->menu,
-            'htmlOptions' => array('class' => 'space-y-3 space-x-8 text-sm'),
+            'htmlOptions' => array('class' => 'space-y-3 text-sm'),
           ));
           $this->endWidget();
         ?>
