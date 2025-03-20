@@ -51,21 +51,14 @@ $this->menu=array(
 <div id="comments">
     <h3>Leave a Comment</h3>
 
-    <?php if (Yii::app()->user->isGuest): ?>
-        <p>
-            You must first <a href="<?php echo Yii::app()->createUrl('/site/login'); ?>">login</a> to leave a comment.
-        </p>
+    <?php if (Yii::app()->user->hasFlash('commentSubmitted')): ?>
+        <div class="flash-success">
+            <?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
+        </div>
     <?php else: ?>
-        <?php if (Yii::app()->user->hasFlash('commentSubmitted')): ?>
-            <div class="flash-success">
-                <?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
-            </div>
-        <?php else: ?>
-            <?php $this->renderPartial('/comment/_form', array(
-                'model' => $comment,
-                'post' => $model,
-            )); ?>
-        <?php endif; ?>
+        <?php $this->renderPartial('/comment/_form', array(
+            'model' => $comment,
+            'post' => $model,
+        )); ?>
     <?php endif; ?>
 </div>
-
