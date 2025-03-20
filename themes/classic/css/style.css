@@ -88,8 +88,8 @@ body {
   /* Container & Content  */
   /* -------------------- */
   .container {
-	background-color: #1a2036; /* A slightly different dark tone for the content box */
-	margin-top: 0px;         /* Leaves space for fixed navbar */
+	background-color: #1a2036;
+	margin-top: 0px;
 	padding: 15px;
 	/* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); */
 	border-radius: 4px;
@@ -102,7 +102,7 @@ body {
   
   /* Main Content Container */
   .main-container {
-	margin-top: 20px; /* Leaves space for the fixed navbar */
+	margin-top: 0px; /* Leaves space for the fixed navbar */
 	background-color: #202844; /* Same dark neon content area color */
 	padding: 30px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -191,7 +191,7 @@ body {
 	font-weight: 600;
 	color: #fff;
 	text-decoration: none;
-	border-radius: 3px;
+	border-radius: 5px;
 	transition: background-color 0.3s ease;
   }
   .blog-post .read-more a:hover {
@@ -201,7 +201,7 @@ body {
   /* Optional: Add a subtle card effect */
   .blog-post {
 	padding: 20px;
-	background-color: #1a2036;
+	background-color: #242d4b;
 	border-radius: 4px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 	margin-bottom: 30px;
@@ -210,24 +210,6 @@ body {
   
   .blog-post .post-tags {
 	color: #f1c080;
-  }
-  
-  /* -------------------- */
-  /* Sidebar Widgets      */
-  /* -------------------- */
-  .sidebar {
-	background-color: #252b45;
-	padding: 20px;
-	margin-bottom: 40px;
-	border-radius: 4px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-  .widget-title {
-	color: #ff8bcf;
-	font-size: 20px;
-	margin-bottom: 15px;
-	border-bottom: 2px solid #f5539d;
-	padding-bottom: 5px;
   }
   
   /* -------------------- */
@@ -244,4 +226,51 @@ body {
   footer p {
 	margin: 0;
   }
+
+ /* Form Card Container */
+.card.form-card {
+	background-color: #242d4b; /* Dark neon background */
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	margin-bottom: 30px;
+  }
   
+  /* Card Header */
+  .card-header {
+	border-bottom: 1px solid #2e3452;
+	margin-bottom: 15px;
+  }
+  .card-header h2 {
+	color: #f5539d; /* Neon pink heading */
+  }
+  
+  /* Card Body */
+  .card-body {
+	color: #e4e4e4;
+  }
+  
+  /* Form Controls */
+  .form-horizontal .control-label {
+	color: #ffffff;
+	font-weight: bold;
+  }
+  .form-control {
+	background-color: #1a2036;
+	border: 1px solid #2e3452;
+	color: #e4e4e4;
+  }
+  .form-control:focus {
+	border-color: #f5539d;
+	box-shadow: none;
+  }
+   
+ 
+  .sidemenu-container {
+    background-color: #242d4b;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+

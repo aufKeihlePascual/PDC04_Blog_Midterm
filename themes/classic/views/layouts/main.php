@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   
   <!-- Theme Custom CSS -->
+  <!-- Adjust path if your theme name or structure is different -->
   <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css">
 </head>
 <body>
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container navbar-container">
+    <div class="container">
       <!-- Navbar Header -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,16 +55,23 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero Section (Uses your nighttime city image) -->
-  <!-- Make sure 'hero.jpg' is located at: themes/classic/images/hero.jpg -->
+  
+  <!-- Optional Hero Section -->
+  <!-- 
+       If you'd like a large banner using your nighttime city image,
+       create a "hero" div like this. 
+       Make sure 'hero.jpg' is in themes/classic/images/hero.jpg
+  -->
+  
   <div class="hero">
     <h1>Welcome to My Neon Blog</h1>
     <p>Experience the glow of the city at night.</p>
   </div>
+ 
   
   <!-- Main Content Container -->
-  <div class="container main-container">
+  <div class="container" style="margin-top:80px;">
+    
     <!-- Breadcrumbs -->
     <?php if(isset($this->breadcrumbs)):?>
       <div class="row">
@@ -76,30 +84,24 @@
         </div>
       </div>
     <?php endif;?>
-
-    <!-- Page Content + Sidebar -->
+    
+    <!-- Main Row -->
     <div class="row">
       <div class="col-md-8">
         <?php echo $content; ?>
       </div>
       
-      <div class="col-md-4">
-        <!-- Example Sidebar -->
-        <div class="sidebar">
-          <h3 class="widget-title">Sidebar Widget</h3>
-          <p>Add recent posts, ads, or any other elements here.</p>
-        </div>
-      </div>
     </div>
-
+    
     <hr>
-
+    
     <!-- Footer -->
     <footer>
       <p>&copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.</p>
       <p><?php echo Yii::powered(); ?></p>
     </footer>
-  </div><!-- /main-container -->
+    
+  </div> <!-- /container -->
   
   <!-- jQuery and Bootstrap JS (CDN) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
