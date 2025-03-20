@@ -17,7 +17,6 @@
 	<?php // echo CHtml::encode(Comment::getStatusName($data->status));
 	echo CHtml::encode(Lookup::item("CommentStatus", $data->status));
 	?>
-
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>

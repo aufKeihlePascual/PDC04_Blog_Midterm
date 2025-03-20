@@ -25,11 +25,14 @@
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->dropDownList($model, 'status', Lookup::items('CommentStatus')); ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
+	<?php if (!Yii::app()->user->isGuest && Yii::app()->user->name === 'admin'): ?>
+		<div class="row">
+			<?php echo $form->labelEx($model, 'status'); ?>
+			<?php echo $form->dropDownList($model, 'status', Lookup::items('CommentStatus')); ?>
+			<?php echo $form->error($model, 'status'); ?>
+		</div>
+	<?php endif; ?>
+
 
 	<div class="row">
 		<?php //echo $form->labelEx($model,'create_time'); ?>
