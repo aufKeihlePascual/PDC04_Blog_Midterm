@@ -49,15 +49,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'update_time'); ?>
-		<?php echo $form->textField($model,'update_time'); ?>
-		<?php echo $form->error($model,'update_time'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'author_id'); ?>
-		<?php echo $form->textField($model,'author_id'); ?>
-		<?php echo $form->error($model,'author_id'); ?>
+		<?php //echo $form->labelEx($model,'update_time'); ?>
+		<?php //echo $form->textField($model,'update_time'); ?>
+		<?php //echo $form->error($model,'update_time'); ?>
+		<?php echo $form->hiddenField($model, 'update_time'); ?>
 	</div>
 
 	<div class="row buttons">
