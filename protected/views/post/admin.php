@@ -49,6 +49,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
+		array(
+            'name' => 'author_id',
+            'header' => 'Author',
+            'value' => 'isset($data->author) ? $data->author->username : "Unknown"',
+            'filter' => CHtml::listData(User::model()->findAll(), 'id', 'username'),
+        ),
 		'title',
 		'content',
 		'tags',
@@ -67,7 +73,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'value' => 'date("m/d/y h:i A", $data->update_time)',
     		'filter' => false,
         ),
-		//'author_id',
+		
 		array(
 			'class'=>'CButtonColumn',
 		),
