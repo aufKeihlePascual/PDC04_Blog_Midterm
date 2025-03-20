@@ -1,0 +1,232 @@
+/* NIGHT CITY BLOG THEME */
+/* Inspired by your uploaded nighttime cityscape */
+
+/* -------------------- */
+/* Base & Body          */
+/* -------------------- */
+body {
+	background-color: #131a2e; /* Deep navy/blue reminiscent of the night sky */
+	color: #e4e4e4;           /* Soft gray text for readability on dark bg */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+  }
+  
+  /* If you want a "hero" banner referencing your image,
+	 uncomment and place a container in your layout:
+	 <div class="hero">
+	   <h1>Welcome to My Neon Blog</h1>
+	   <p>Subheading or tagline here</p>
+	 </div>
+  */
+  
+  /* -------------------- */
+  /* Hero Section         */
+  /* -------------------- */
+  .hero {
+	position: relative;
+	background: url('../images/hero.jpg') center center no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+	padding: 120px 0;
+	margin-bottom: 40px;
+  }
+  .hero::before {
+	/* Dark overlay for text legibility */
+	content: "";
+	background: rgba(19, 26, 46, 0.6);
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+  }
+  .hero h1,
+  .hero p {
+	position: relative;
+	z-index: 1;
+  }
+  .hero h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+  }
+  .hero p {
+	font-size: 20px;
+  }
+  
+  /* -------------------- */
+  /* Navbar               */
+  /* -------------------- */
+  .navbar-default {
+  background-color: #1a2036d0;
+  border: none;
+  border-radius: 0;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+}
+.navbar-default .navbar-brand {
+  color: #f5539d; /* Neon pink accent for brand */
+  font-size: 28px;
+  font-weight: bold;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ff8bcf; /* Slightly lighter neon pink on hover */
+}
+.navbar-default .navbar-nav {
+  float: right;  /* This moves the navigation links to the right */
+}
+.navbar-default .navbar-nav > li > a {
+  color: #e4e4e4;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li.active > a {
+  color: #f5539d; /* Neon pink hover/active */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.navbar-default .navbar-nav > li:not(:first-child) {
+	margin-left: 18px;
+  }
+  
+  /* -------------------- */
+  /* Container & Content  */
+  /* -------------------- */
+  .container {
+	background-color: #1a2036; /* A slightly different dark tone for the content box */
+	margin-top: 0px;         /* Leaves space for fixed navbar */
+	padding: 15px;
+	/* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); */
+	border-radius: 4px;
+  }
+
+  /* Navbar Container */
+.navbar-container {
+	background-color: transparent;
+  }
+  
+  /* Main Content Container */
+  .main-container {
+	margin-top: 20px; /* Leaves space for the fixed navbar */
+	background-color: #1b2239; /* Same dark neon content area color */
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+  }
+  
+  /* Hero Section */
+  .hero {
+	position: relative;
+	background: url('../images/hero.jpg') center center no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+	padding: 120px 0;
+	margin-top: 80px;
+	margin-bottom: 20px;
+  }
+  .hero::before {
+	/* Dark overlay for better text contrast */
+	content: "";
+	background: rgba(19, 26, 46, 0.507);
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+  }
+  .hero h1, .hero p {
+	position: relative;
+	z-index: 1;
+  }
+  
+  /* -------------------- */
+  /* Headings & Text      */
+  /* -------------------- */
+  h1, h2, h3, h4, h5, h6 {
+	color: #ffffff;  /* White text for strong contrast */
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-weight: bold;
+  }
+  p {
+	font-size: 18px;
+	margin-bottom: 20px;
+  }
+  a {
+	color: #f5539d;  /* Neon pink links */
+	text-decoration: none;
+  }
+  a:hover, a:focus {
+	color: #ff8bcf;
+	text-decoration: underline;
+  }
+  
+  /* -------------------- */
+  /* Breadcrumbs          */
+  /* -------------------- */
+  .breadcrumb {
+	background-color: #252b45;
+	border-radius: 4px;
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+  .breadcrumb > li + li:before {
+	content: "›";
+	padding: 0 8px;
+	color: #888;
+  }
+  
+  /* -------------------- */
+  /* Blog Post Styling    */
+  /* -------------------- */
+  .blog-post {
+	border-bottom: 1px solid #2e3452;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+  }
+  .blog-post:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+  }
+  .blog-post h2 {
+	color: #f5539d; /* Neon pink for post titles */
+  }
+  .blog-post .post-meta {
+	color: #999;
+	font-size: 14px;
+	margin-bottom: 10px;
+  }
+  
+  /* -------------------- */
+  /* Sidebar Widgets      */
+  /* -------------------- */
+  .sidebar {
+	background-color: #252b45;
+	padding: 20px;
+	margin-bottom: 40px;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  .widget-title {
+	color: #ff8bcf;
+	font-size: 20px;
+	margin-bottom: 15px;
+	border-bottom: 2px solid #f5539d;
+	padding-bottom: 5px;
+  }
+  
+  /* -------------------- */
+  /* Footer               */
+  /* -------------------- */
+  footer {
+	padding: 20px 0;
+	background-color: #1a2036;
+	text-align: center;
+	color: #999;
+	margin-top: 40px;
+	border-top: 1px solid #2e3452;
+  }
+  footer p {
+	margin: 0;
+  }
+  
