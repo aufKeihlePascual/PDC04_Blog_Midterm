@@ -59,10 +59,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		),
 		array(
             'name' => 'create_time',
-            'value' => 'date("m/d/Y h:i A", $data->create_time)',
+            'value' => 'date("m/d/y h:i A", $data->create_time)',
     		'filter' => false,
         ),
-		//'update_time',
+		array(
+            'name' => 'update_time',
+            'value' => 'date("m/d/y h:i A", $data->update_time)',
+    		'filter' => false,
+        ),
 		//'author_id',
 		array(
 			'class'=>'CButtonColumn',
