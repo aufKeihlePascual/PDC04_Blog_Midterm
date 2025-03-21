@@ -58,36 +58,36 @@ $('.search-form form').submit(function(){
         'columns' => array(
           array(
             'name' => 'id',
-            'htmlOptions' => array('class' => 'px-4 py-2'),
+            'htmlOptions' => array('class' => 'px-4 py-2 text-black'),
             'filterHtmlOptions' => array('class' => 'bg-white text-gray-800 px-2 py-1'),
           ),
           array(
             'name' => 'content',
             'value' => 'strlen(strip_tags($data->content)) > 50 ? substr(strip_tags($data->content), 0, 50) . "..." : strip_tags($data->content)',
-            'htmlOptions' => array('class' => 'px-4 py-2 sm:max-w-[300px] overflow-hidden text-justify'),
+            'htmlOptions' => array('class' => 'px-4 py-2 sm:max-w-[300px] overflow-hidden text-justify text-black '),
             'filterHtmlOptions' => array('class' => 'bg-white text-gray-800 px-2 py-1'),
           ),
           array(
             'name' => 'status',
             'value' => 'Comment::getStatusName($data->status)',
             'filter' => CHtml::listData(Lookup::model()->findAll('type="CommentStatus"'), 'code', 'name'),
-            'htmlOptions' => array('class' => 'px-4 py-2 text-center'),
+            'htmlOptions' => array('class' => 'px-4 py-2 text-center text-black'),
             'filterHtmlOptions' => array('class' => 'bg-white text-gray-800 px-2 py-1'),
           ),
           array(
             'name' => 'create_time',
             'value' => 'date("m/d/Y h:i A", $data->create_time)',
             'filter' => false,
-            'htmlOptions' => array('class' => 'px-4 py-2'),
+            'htmlOptions' => array('class' => 'px-4 py-2 text-black'),
           ),
           array(
             'name' => 'author',
-            'htmlOptions' => array('class' => 'px-4 py-2 sm:max-w-[150px] overflow-hidden text-center'),
+            'htmlOptions' => array('class' => 'px-4 py-2 sm:max-w-[150px] overflow-hidden text-center text-black'),
             'filterHtmlOptions' => array('class' => 'bg-white text-gray-800 px-2 py-1'),
           ),
           array(
             'name' => 'email',
-            'htmlOptions' => array('class' => 'px-4 py-2 sm:max-w-[200px] overflow-hidden text-center'),
+            'htmlOptions' => array('class' => 'px-4 py-2 sm:max-w-[200px] overflow-hidden text-center text-black'),
             'filterHtmlOptions' => array('class' => 'bg-white text-gray-800 px-2 py-1'),
           ),
           array(

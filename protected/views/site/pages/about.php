@@ -14,7 +14,7 @@ $this->breadcrumbs = array('About');
   </header>
   
   <!-- Article Section -->
-  <article class="max-w-4xl mx-auto bg-white dark:bg-gray-600 p-8 rounded-lg shadow-md">
+  <article class="max-w-4xl mx-auto bg-white dark:bg-gray-600 p-8 rounded-lg shadow-md text-black ">
     <div class="prose dark:prose-invert">
       <p>
         Welcome to my blog where I share my insights and experiences in the world of IT and web development.
